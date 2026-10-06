@@ -1,0 +1,21 @@
+DIMDIM CP5 - COMO ABRIR NO INTELLIJ
+
+1. Abra ESTA pasta (DimDim-CP5-IntelliJ) no IntelliJ IDEA.
+2. Se o IntelliJ perguntar sobre Maven, clique em Load/Import Maven Project.
+3. Configure o Project SDK como Java 21 (Java 25 tambem inicia, mas Java 21 e o alvo do projeto).
+4. Abra src/main/java/com/dimdim/DimdimApplication.java.
+5. Clique no triangulo verde ao lado de main() > Run.
+6. Na configuracao criada, adicione a variavel de ambiente:
+   SPRING_DATASOURCE_PASSWORD=<a senha do sqladmin criada por voce no Azure>
+7. Execute novamente.
+8. Acesse http://localhost:8080 enquanto estiver testando localmente.
+
+IMPORTANTE:
+- A senha NAO esta neste projeto e nao deve ser enviada ao GitHub.
+- Servidor SQL: sql-dimdim-cp5-561694.database.windows.net
+- Banco: DimDimDB
+- Usuario SQL: sqladmin
+- O Azure SQL usa a porta TCP 1433.
+- Se Test-NetConnection sql-dimdim-cp5-561694.database.windows.net -Port 1433 retornar False,
+  a rede atual esta impedindo a conexao. Nenhuma alteracao no projeto Java corrige um bloqueio de rede;
+  use uma rede que permita 1433 ou faça o deploy no Azure App Service.

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Seu dinheiro, organizado')}"></head>
+<body>
+<header th:replace="~{fragments/layout :: topo('inicio')}"></header>
+<main>
+    <section class="hero">
+        <span class="selo">BANCO DIGITAL · DIMDIMAPP</span>
+        <h1>Seus usuários e transações, <em>sempre sob controle</em></h1>
+        <p>Cadastre usuários, registre entradas e saídas e acompanhe seu saldo em tempo real, tudo em uma aplicação simples, rápida e na nuvem.</p>
+        <div class="botoes">
+            <a class="btn grande" th:if="${temUsuarios}" th:href="@{/dashboard}">Abrir meu dashboard</a>
+            <a class="btn grande" th:unless="${temUsuarios}" th:href="@{/usuarios/novo}">Cadastrar usuário</a>
+            <a class="btn grande sec" th:href="@{/usuarios}">Ver usuários</a>
+        </div>
+    </section>
+
+    <section class="secao">
+        <h2>O que você pode fazer</h2>
+        <div class="grade">
+            <div class="card">
+                <div class="icone">🏦</div>
+                <h3>Gerenciar usuários</h3>
+                <p>Crie, edite e exclua usuários com nome e e-mail.</p>
+            </div>
+            <div class="card">
+                <div class="icone">💸</div>
+                <h3>Registrar movimentações</h3>
+                <p>Registre entradas e saídas vinculadas a cada usuário.</p>
+            </div>
+            <div class="card">
+                <div class="icone">🛡️</div>
+                <h3>Regras de segurança</h3>
+                <p>Os dados são validados e persistidos diretamente no Azure SQL.</p>
+            </div>
+            <div class="card">
+                <div class="icone">📊</div>
+                <h3>Dashboard</h3>
+                <p>Veja saldo total, entradas, saídas, saldo consolidado e as últimas movimentações.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="secao">
+        <h2>Como funciona</h2>
+        <div class="grade">
+            <div class="card"><div class="passo-n">1</div><h3>Crie um usuário</h3><p>Informe nome e e-mail do usuário.</p></div>
+            <div class="card"><div class="passo-n">2</div><h3>Movimente</h3><p>Registre entradas e saídas vinculadas ao usuário escolhido.</p></div>
+            <div class="card"><div class="passo-n">3</div><h3>Acompanhe</h3><p>Consulte o dashboard e o histórico de transações.</p></div>
+        </div>
+    </section>
+
+    <section class="card cta">
+        <h2>Pronto para começar?</h2>
+        <p>Leva menos de um minuto para cadastrar o primeiro usuário.</p>
+        <a class="btn grande" th:href="@{/usuarios/novo}">Cadastrar usuário agora</a>
+    </section>
+</main>
+<footer class="rodape">DimDimApp · Azure App Service + Azure SQL Database + Application Insights</footer>
+</body>
+</html>

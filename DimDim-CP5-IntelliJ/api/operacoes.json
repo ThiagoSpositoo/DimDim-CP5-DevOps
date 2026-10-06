@@ -1,0 +1,4 @@
+{
+  "usuarios": {"GET":"/api/usuarios", "POST":"/api/usuarios", "PUT":"/api/usuarios/{id}", "DELETE":"/api/usuarios/{id}"},
+  "transacoes": {"GET":"/api/transacoes", "POST":"/api/transacoes", "PUT":"/api/transacoes/{id}", "DELETE":"/api/transacoes/{id}"}
+}

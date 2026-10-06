@@ -1,0 +1,12 @@
+#!/bin/bash
+SUFIXO="561694"
+LOCATION="centralus"
+SQL_LOCATION="canadacentral"
+RG="rg-dimdim-cp5"
+PLAN="plan-dimdim-cp5"
+APP="dimdim-cp5-${SUFIXO}"
+SQL_SERVER="sql-dimdim-cp5-561694"
+SQL_DB="DimDimDB"
+SQL_USER="sqladmin"
+LAW="law-dimdim-cp5"
+APPINSIGHTS="ai-dimdim-cp5"
